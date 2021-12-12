@@ -1,3 +1,17 @@
 <div class="book-wrapper">
-    <p>books works!</p>
+    <div class="book-container">
+        <div class="book-list">
+            <div class="book-item" *ngFor = "let book of books">        
+                <div class="book-infos">
+                    <div class="book-cover"><img src="{{ book.cover }}" alt="{{ book.title }}"></div>
+                    <div class="book-title">{{ book.title }}</div> 
+                    <div class="book-desc">{{ book.synospis }}</div> 
+                    <div class="book-bottom">
+                        <div class="book-price">{{ book.price }}€</div> 
+                        <a mat-raised-button color="accent"><mat-icon>shopping_cart</mat-icon></a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
 </div>
