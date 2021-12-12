@@ -1,27 +1,43 @@
-# Hplibrary
+# Henri Potier Library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+> Publicis Sapient front end test
 
-## Development server
+## Description
+Projet de test réalisé dans le cadre d'une évaluation de compétence par la Publicis sapient pour une éventuelle oppourtuné en post de dévéloppeur front-end.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Téchnologies
+- Projet généré par l' [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+- Angular
+- TypeScript
+- SASS
+- Materialize
 
-## Code scaffolding
+## Comment utiliser ?
+### Installation
+Télécharger le zip visible sur [https://github.com/Jcodeo/hplibrary](https://github.com/Jcodeo/hplibrary) ou faire un git clone du projet:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Cloner le projet : `git clone https://github.com/Jcodeo/hplibrary.git`
 
-## Build
+- Acceder au dossier hplibrary : `cd hplibrary\`
+- Installer les dépendances : `npm install`
+- Lancer le serveur de developpement : `ng serve`
+- Avec votre navigateur, allez sur : `http://localhost:4200/`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prod version
 
-## Running unit tests
+La version en ligne de l'application est visible sur https://jcodeo.github.io/hplibrary/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Codes rappel
 
-## Running end-to-end tests
+Quelques exemples de ligne de commande que j'ai utilisé:
+-  `ng g c components/component-name` pour générer les components
+-  `ng g s services/service-name` pour générer les services
+-  `ng g pipe pipes/pipe-name` pour générer les pipes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Autheur
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Skype : Harson JORO ( live:harsondev )
+- Mail Perso : harsonjeanlouisjoro@gmail.com
+- Mail Dev : harsondev@gmail.com
+- LinkedIn : [Harson Jean Louis JORO](https://www.linkedin.com/in/harson-joro-jr007/)
+- Whatsapp : +261 34 28 580 08 ()
