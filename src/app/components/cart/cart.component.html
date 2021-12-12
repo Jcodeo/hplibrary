@@ -14,7 +14,7 @@
                             <td class="mat-cell book-prix">{{item.price}}€</td>
                             <td class="mat-cell book-nombre">{{item.quantity}}</td>
                             <td class="mat-cell book-total">{{item.total}}€</td>
-                            <td class="mat-cell book-action"><span mat-raised-button color="accent" class="delete"><mat-icon>delete</mat-icon></span></td>
+                            <td class="mat-cell book-action"><span mat-raised-button color="accent" class="delete" (click)=removeBook(item)><mat-icon>delete</mat-icon></span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -30,7 +30,7 @@
                         </tr>
                         <tr class="final-price">
                             <td class="label">Net à payer</td>
-                            <td class="value">0€</td>
+                            <td class="value">{{netToPay}}€</td>
                         </tr>
                     </table>
                 </div>

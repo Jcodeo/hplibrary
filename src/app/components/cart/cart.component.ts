@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   public granTotal !: number;
   public offers : any = [];
   public isbnInCart !: string;
+  public netToPay : number = 0;
 
   constructor( private cartService : CartService) { }
 
@@ -35,9 +36,16 @@ export class CartComponent implements OnInit {
           }
         });
         this.offers = highest;
+        this.netToPay = this.granTotal - this.offers;
         console.log('total = ' + this.granTotal);
         console.log('Réduction = ' + this.offers);
+        console.log('Net à payer = ' + this.netToPay);
+        console.log('=====================================');
       });
     })
+  }
+  removeBook(item : any){
+    console.log(item);
+    this.cartService.removeCartBook(item);
   }
 }

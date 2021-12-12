@@ -51,4 +51,14 @@ export class CartService {
       return res;
     }))
   }
+  removeCartBook(book : any){
+    this.cartBookList.map((a:any, index:any)=>{
+      console.log('book isbn: ' + book.isbn);
+      console.log('index isbn: ' + a.isbn);
+      if(book.isbn===a.isbn){
+        this.cartBookList.splice(index, 1);
+      }
+    })
+    this.bookList.next(this.cartBookList);
+  }
 }
