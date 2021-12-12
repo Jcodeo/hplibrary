@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class CartService {
   public cartBookList : any =[];
   public bookList = new BehaviorSubject<any>([]);
 
-  constructor() { }
+  constructor( private http : HttpClient) { }
 
   // getter
   getBooks(){
@@ -26,6 +27,7 @@ export class CartService {
     this.bookList.next(this.cartBookList);
     // console.table(this.cartBookList);
     this.getTotalPrice();
+    this.getOffers();
   }
   getTotalPrice() : number{
     let grandTotal = 0;
@@ -33,5 +35,20 @@ export class CartService {
       grandTotal += a.total;
     });
     return grandTotal;
+  }
+  getOffers(){
+    let offers : any;
+    let isbnInCart = '';
+    this.cartBookList.map((a:any) => {
+      isbnInCart += a.isbn + ',';
+    })
+    // console.log(isbnInCart);
+    
+    let offersUrl = 'https://henri-potier.techx.fr/books/' + isbnInCart + '/commercialOffers';
+    console.log('url is: ' + offersUrl);
+    return this.http.get<any>(offersUrl)
+    .pipe(map((res:any) => {
+      return res;
+    }))
   }
 }
