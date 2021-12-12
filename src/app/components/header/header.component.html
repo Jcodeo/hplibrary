@@ -2,6 +2,6 @@
     <span routerLink="books" class="logo"><mat-icon>library_books</mat-icon> HP Library</span> 
     <div class="spacer"></div>
     <a routerLink="books" mat-button>Livres</a>
-    <a routerLink="cart" mat-button><mat-icon matBadge="0" matBadgeColor="warn">shopping_cart</mat-icon>
+    <a routerLink="cart" mat-button><mat-icon matBadge="{{totalBooks}}" matBadgeColor="warn">shopping_cart</mat-icon>
     </a>
 </mat-toolbar>
