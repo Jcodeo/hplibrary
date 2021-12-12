@@ -1,3 +1,80 @@
 .book-wrapper{
-    padding-top: 64px;
+    background: #13160d url("/assets/img/hp_bg.jpg") no-repeat center -500px ;
+    text-align: center;
+    color: #fff;
+    padding-top: 64px; 
+    .book-container{
+        max-width: 1240px;
+        margin: auto;
+        .book-intro{
+            padding: 50px 0;
+            .pre-title {
+                font-size: 20px;
+                line-height: 1.4;
+            }
+            .title {
+                font-size: 60px;
+                line-height: normal;
+                font-weight: bold;
+                margin: 15px auto;
+                @media (max-width:767px){
+                    font-size: 40px;
+                    margin-bottom: 0;
+                }
+            }
+            .accroche {
+                font-size: 16px;
+                padding: 0 15px;
+                line-height: 30px;
+                max-width: 800px;
+                margin: 0px auto;
+                @media (max-width:767px){
+                    display: none;
+                }
+            }
+        }
+        .book-list{
+            display: flex;
+            flex-flow: wrap;
+            flex-direction: row;
+            justify-content: center;
+            .book-item{
+                flex: 0 0 25%;
+                margin-bottom: 40px;
+                .book-infos{
+                    padding: 0 25px 25px;
+                    .book-cover{
+                        img{
+                            border-radius: 7px;
+                            max-width: 260px; 
+                        }
+                    }
+                    .book-title {
+                        font-size: 20px;
+                        line-height: 26px;
+                        margin: 25px auto 35px;
+                    }
+                    .book-bottom {
+                        position: relative;
+                        .book-price {
+                            font-size: 30px;
+                            font-weight: bold;
+                        }
+                        a{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            right: 0;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
 }
