@@ -9,6 +9,8 @@ import { ApiBooksService } from 'src/app/services/api-books.service';
 export class BooksComponent implements OnInit {
 
   public books : any;
+  public searchKey : string = '';
+  public searchTerm : string = '';
 
   constructor( private api : ApiBooksService ) { }
 
@@ -18,6 +20,11 @@ export class BooksComponent implements OnInit {
       // console.log(res);
       this.books = res;
     })
+  }
+  search(event : any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.searchKey = this.searchTerm;
   }
 
 }

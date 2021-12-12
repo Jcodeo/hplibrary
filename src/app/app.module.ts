@@ -14,19 +14,25 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { HeaderComponent } from './components/header/header.component';
 import { BooksComponent } from './components/books/books.component';
 import { CartComponent } from './components/cart/cart.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BooksComponent,
-    CartComponent
+    CartComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule, 
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
