@@ -1,3 +1,33 @@
 .cart-container{
-    padding-top: 64px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-top: 114px;
+    .mat-card{
+        padding-bottom: 50px;
+        .empty-cart{
+            text-align: center;
+            img{
+                max-width: 350px;
+                @media (max-width: 767px){
+                    max-width: 100%;
+                }
+            }
+            .cart-text{
+                font-size: 20px;
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+            .cart-accroche {
+                font-size: 16px;
+                line-height: normal;
+                margin-bottom: 35px;
+            }
+            .buy-btn{
+                background: #2e361d;
+                color: #fff;
+                margin-bottom: 35px;
+            }
+        }
+    }
+    
 }
