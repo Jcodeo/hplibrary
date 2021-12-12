@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiBooksService } from 'src/app/services/api-books.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-books',
@@ -12,7 +13,7 @@ export class BooksComponent implements OnInit {
   public searchKey : string = '';
   public searchTerm : string = '';
 
-  constructor( private api : ApiBooksService ) { }
+  constructor( private api : ApiBooksService, private cart : CartService ) { }
 
   ngOnInit(): void {
     this.api.getBooks()
@@ -25,6 +26,11 @@ export class BooksComponent implements OnInit {
     this.searchTerm = (event.target as HTMLInputElement).value;
     console.log(this.searchTerm);
     this.searchKey = this.searchTerm;
+  }
+
+  addToCart(book : any){
+    console.table(book);
+    this.cart.addToCart(book);
   }
 
 }
