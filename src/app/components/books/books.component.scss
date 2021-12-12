@@ -1,5 +1,6 @@
+
 .book-wrapper{
-    // background: #13160d url("/assets/img/hp_bg.jpg") no-repeat center -500px ; 
+    // background: #13160d url("/assets/img/hp_bg.jpg") no-repeat center -500px ;
     text-align: center;
     color: #fff;
     padding-top: 64px; 
@@ -87,11 +88,61 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
+                            .mat-icon{
+                                transform: scale(1);
+                                transition: all ease-in-out 300ms;
+                            }
+                            .added{
+                                display: none;
+                            }
+                            &.cdk-focused{
+                                .mat-icon{
+                                    display: none;
+                                }
+                                .added{
+                                    display: block;
+                                    animation: added 2s ease-in-out 0s 1 normal forwards;
+                                }
+                            }
                         }
                     }
                     
                 }
             }
         }
+    }
+}
+
+@media (max-width: 1279px){
+    .book-wrapper{
+        .book-container{
+            .book-list{
+                justify-content: center;
+            }
+        }
+    }
+}
+@-webkit-keyframes added {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+  
+    25%,
+    75% {
+      opacity: 0;
+    }
+}
+@keyframes added {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+  
+    25%,
+    75% {
+      opacity: 0;
     }
 }
