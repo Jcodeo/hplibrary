@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  public displayedColumns : string[] = ['Titre', 'Prix', 'Qté', 'Total', 'Action'];
+
   constructor() { }
 
   ngOnInit(): void {

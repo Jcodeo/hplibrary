@@ -2,6 +2,55 @@
     <mat-card>
         <mat-card-title>Mon panier</mat-card-title>
         <mat-card-subtitle>Récapitulatif</mat-card-subtitle>
+
+        <div class="cart-list">
+            <table class="mat-elevation-z8 book-table">                   
+                <thead>
+                    <th *ngFor="let column of displayedColumns">{{column}}</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="mat-cell book-titre">book title 1</td>
+                        <td class="mat-cell book-prix">30€</td>
+                        <td class="mat-cell book-nombre">1</td>
+                        <td class="mat-cell book-total">30€</td>
+                        <td class="mat-cell book-action"><span mat-raised-button color="accent" class="delete"><mat-icon>delete</mat-icon></span></td>
+                    </tr>
+                    <tr>
+                        <td class="mat-cell book-titre">book title 1</td>
+                        <td class="mat-cell book-prix">30€</td>
+                        <td class="mat-cell book-nombre">1</td>
+                        <td class="mat-cell book-total">30€</td>
+                        <td class="mat-cell book-action"><span mat-raised-button color="accent" class="delete"><mat-icon>delete</mat-icon></span></td>
+                    </tr>
+                    <tr>
+                        <td class="mat-cell book-titre">book title 1</td>
+                        <td class="mat-cell book-prix">30€</td>
+                        <td class="mat-cell book-nombre">1</td>
+                        <td class="mat-cell book-total">30€</td>
+                        <td class="mat-cell book-action"><span mat-raised-button color="accent" class="delete"><mat-icon>delete</mat-icon></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="total-cart">
+                <table class="table-total">
+                    <tr>
+                        <td class="label">Total</td>
+                        <td class="value">0€</td>
+                    </tr>
+                    <tr class="reduction">
+                        <td class="label">Réduction</td>
+                        <td class="value">- 0€</td>
+                    </tr>
+                    <tr class="final-price">
+                        <td class="label">Net à payer</td>
+                        <td class="value">0€</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            
+
         <div class="empty-cart">
             <img src="./assets/img/empty-cart.png" alt="">
             <div class="cart-text">Vous n'avez pas encore décidé quel livre acheter ?</div>

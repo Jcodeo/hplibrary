@@ -4,6 +4,102 @@
     padding-top: 114px;
     .mat-card{
         padding-bottom: 50px;
+        .cart-list{
+            .book-table {
+                width: 100%;
+                thead{
+                    color: #2e361d;
+                    background: #f1ffd4;
+                }
+                th{
+                    padding: 15px;
+                    &:first-child{
+                        text-align: left;
+                    }
+                    &:nth-child(2){
+                        @media (max-width: 767px){
+                            display: none;
+                        }
+                    }
+                }
+                tr:nth-child(even) {
+                    background: whitesmoke;
+                }
+                tr:hover {
+                    background: #f1ffd4;
+                    color: #fff !important;
+                }
+                .mat-cell{
+                    padding: 15px;
+                    &:nth-child(2){
+                        @media (max-width: 767px) {
+                            display: none;
+                        }
+                    }
+                }
+                .book-titre {
+                    padding-left: 16px;
+                    font-size: 16px;
+                }
+                .book-prix {
+                    font-style: italic;
+                    text-align: center;
+                }
+                .book-nombre {
+                    text-align: center;
+                }
+                .book-total {
+                    text-align: center;
+                    font-weight: bold;
+                }    
+                .book-action{
+                    padding: 0 15px;
+                    text-align: center;
+                    .delete{
+                        cursor: pointer;
+                        &:hover{
+                            color: #ff0000;
+                        }
+                    }
+                }
+            }  
+            .total-cart{
+                text-align: right;
+                margin-top: 50px;
+                .table-total{
+                    margin-right: 0;
+                    margin-left: auto;
+                    width: 100%;
+                    max-width: 280px;
+                    text-align: left;
+                    tr{
+                        &.reduction{
+                            .value{
+                                font-weight: bold;
+                                color: #ff0000;
+                            }
+                        }
+                        &.final-price{
+                            font-size: 16px;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            color: #607a29;
+                            background-color: #d4efc4;
+                        }
+                        td{
+                            padding: 5px;
+                            &.label{
+                                font-weight: bold;
+                            }
+                            &.value{
+                                text-align: center;
+                            }
+                        }
+                    }
+                    
+                }
+            }          
+        }
         .empty-cart{
             text-align: center;
             img{
