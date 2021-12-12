@@ -20,6 +20,10 @@ export class BooksComponent implements OnInit {
     .subscribe(res => {
       // console.log(res);
       this.books = res;
+      this.books.forEach((a:any) => {  
+        Object.assign(a, {quantity:1, total:a.price});
+        // console.log(a);
+      });
     })
   }
   search(event : any){
@@ -29,7 +33,7 @@ export class BooksComponent implements OnInit {
   }
 
   addToCart(book : any){
-    console.table(book);
+    // console.table(book);
     this.cart.addToCart(book);
   }
 

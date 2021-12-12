@@ -25,5 +25,13 @@ export class CartService {
     this.cartBookList.push(book);
     this.bookList.next(this.cartBookList);
     // console.table(this.cartBookList);
+    this.getTotalPrice();
+  }
+  getTotalPrice() : number{
+    let grandTotal = 0;
+    this.cartBookList.map((a:any)=>{
+      grandTotal += a.total;
+    });
+    return grandTotal;
   }
 }

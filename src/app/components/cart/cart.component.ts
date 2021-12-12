@@ -10,14 +10,16 @@ export class CartComponent implements OnInit {
 
   public displayedColumns : string[] = ['Titre', 'Prix', 'Qté', 'Total', 'Action'];
   public book : any = [];
+  public granTotal !: number;
 
   constructor( private cartService : CartService) { }
 
   ngOnInit(): void {
     this.cartService.getBooks()
     .subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.book = res;
+      this.granTotal = this.cartService.getTotalPrice();
     });
   }
 }
