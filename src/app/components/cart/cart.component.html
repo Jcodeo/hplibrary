@@ -2,46 +2,48 @@
     <mat-card>
         <mat-card-title>Mon panier</mat-card-title>
         <mat-card-subtitle>Récapitulatif</mat-card-subtitle>
-
-        <div class="cart-list">
-            <table class="mat-elevation-z8 book-table">                   
-                <thead>
-                    <th *ngFor="let column of displayedColumns">{{column}}</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of book; let i= index">
-                        <td class="mat-cell book-titre">{{item.title}}</td>
-                        <td class="mat-cell book-prix">{{item.price}}€</td>
-                        <td class="mat-cell book-nombre">{{item.quantity}}</td>
-                        <td class="mat-cell book-total">{{item.total}}€</td>
-                        <td class="mat-cell book-action"><span mat-raised-button color="accent" class="delete"><mat-icon>delete</mat-icon></span></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="total-cart">
-                <table class="table-total">
-                    <tr>
-                        <td class="label">Total</td>
-                        <td class="value">0€</td>
-                    </tr>
-                    <tr class="reduction">
-                        <td class="label">Réduction</td>
-                        <td class="value">- 0€</td>
-                    </tr>
-                    <tr class="final-price">
-                        <td class="label">Net à payer</td>
-                        <td class="value">0€</td>
-                    </tr>
+        <ng-container *ngIf="book.length != 0">
+            <div class="cart-list">
+                <table class="mat-elevation-z8 book-table">                   
+                    <thead>
+                        <th *ngFor="let column of displayedColumns">{{column}}</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of book; let i= index">
+                            <td class="mat-cell book-titre">{{item.title}}</td>
+                            <td class="mat-cell book-prix">{{item.price}}€</td>
+                            <td class="mat-cell book-nombre">{{item.quantity}}</td>
+                            <td class="mat-cell book-total">{{item.total}}€</td>
+                            <td class="mat-cell book-action"><span mat-raised-button color="accent" class="delete"><mat-icon>delete</mat-icon></span></td>
+                        </tr>
+                    </tbody>
                 </table>
+                <div class="total-cart">
+                    <table class="table-total">
+                        <tr>
+                            <td class="label">Total</td>
+                            <td class="value">0€</td>
+                        </tr>
+                        <tr class="reduction">
+                            <td class="label">Réduction</td>
+                            <td class="value">- 0€</td>
+                        </tr>
+                        <tr class="final-price">
+                            <td class="label">Net à payer</td>
+                            <td class="value">0€</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </div>
+        </ng-container>
             
-
-        <div class="empty-cart">
-            <img src="./assets/img/empty-cart.png" alt="">
-            <div class="cart-text">Vous n'avez pas encore décidé quel livre acheter ?</div>
-            <div class="cart-accroche">Choisir de livre maintenant</div>
-            <a routerLink="/books" mat-raised-button class="buy-btn">Acheter maintenant</a>
-        </div>
+        <ng-container *ngIf="book.length == 0">
+            <div class="empty-cart">
+                <img src="./assets/img/empty-cart.png" alt="">
+                <div class="cart-text">Vous n'avez pas encore décidé quel livre acheter ?</div>
+                <div class="cart-accroche">Choisir de livre maintenant</div>
+                <a routerLink="/books" mat-raised-button class="buy-btn">Acheter maintenant</a>
+            </div>
+        </ng-container>
     </mat-card>
 </div>
